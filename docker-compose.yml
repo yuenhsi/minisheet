@@ -1,0 +1,30 @@
+services:
+  minisheet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: minisheet-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: yarn test --watchAll
+    container_name: minisheet-test
+    environment:
+      - CI=false
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true

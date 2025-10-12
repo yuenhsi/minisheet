@@ -1,0 +1,46 @@
+.Cell {
+  height: 22px;
+  min-width: 100px;
+  border: 1px solid #aaa;
+  text-align: right;
+}
+
+.Cell--apex-header,
+.Cell--col-header,
+.Cell--row-header {
+  user-select: none;
+}
+
+.Cell--apex-header {
+  min-width: 50px;
+  background-color: #ddd;
+}
+
+.Cell--col-header {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #eee;
+}
+
+.Cell--row-header {
+  text-align: center;
+  min-width: 50px;
+  background-color: #eee;
+}
+
+.Cell__Input {
+  border: none;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100px;
+  height: 22px;
+}
+
+.Cell__Value {
+  cursor: default;
+}
+
+.Cell__Value, .Cell__Input{
+  font-size: 14px;
+  padding: 0 4px 0 4px;
+}
